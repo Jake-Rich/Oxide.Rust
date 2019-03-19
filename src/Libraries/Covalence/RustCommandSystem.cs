@@ -1,6 +1,7 @@
 using Oxide.Core;
 using Oxide.Core.Libraries.Covalence;
 using Oxide.Core.Plugins;
+using Oxide.Rust.Libraries.Covalence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -222,7 +223,7 @@ namespace Oxide.Game.Rust.Libraries.Covalence
                     BasePlayer player = arg.Player();
                     if (arg.Connection != null && player != null)
                     {
-                        RustPlayer iplayer = player.IPlayer as RustPlayer;
+                        RustPlayer iplayer = player.IPlayer() as RustPlayer;
                         if (iplayer != null)
                         {
                             iplayer.LastCommand = CommandType.Console;

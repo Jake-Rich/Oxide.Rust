@@ -4,6 +4,7 @@ using Oxide.Core.Configuration;
 using Oxide.Core.Libraries.Covalence;
 using Oxide.Core.Plugins;
 using Oxide.Core.RemoteConsole;
+using Oxide.Rust.Libraries.Covalence;
 using Rust.Ai;
 using Rust.Ai.HTN;
 using System.Collections.Generic;
@@ -283,7 +284,7 @@ namespace Oxide.Game.Rust
 
             // Get player objects
             BasePlayer player = arg.Connection.player as BasePlayer;
-            IPlayer iplayer = player?.IPlayer;
+            IPlayer iplayer = player?.IPlayer();
             if (iplayer == null)
             {
                 return null;
@@ -322,7 +323,7 @@ namespace Oxide.Game.Rust
 
             // Get player objects
             BasePlayer player = arg.Connection.player as BasePlayer;
-            IPlayer iplayer = player?.IPlayer;
+            IPlayer iplayer = player?.IPlayer();
             if (iplayer == null)
             {
                 return;
@@ -354,7 +355,7 @@ namespace Oxide.Game.Rust
         [HookMethod("OnPlayerDisconnected")]
         private void OnPlayerDisconnected(BasePlayer player, string reason)
         {
-            IPlayer iplayer = player.IPlayer;
+            IPlayer iplayer = player.IPlayer();
             if (iplayer != null)
             {
                 Interface.CallHook("OnUserDisconnected", iplayer, reason);
@@ -378,7 +379,6 @@ namespace Oxide.Game.Rust
             IPlayer iplayer = Covalence.PlayerManager.FindPlayerById(player.UserIDString);
             if (iplayer != null)
             {
-                player.IPlayer = iplayer;
                 Interface.CallHook("OnUserConnected", iplayer);
             }
         }
@@ -391,10 +391,10 @@ namespace Oxide.Game.Rust
         [HookMethod("OnPlayerKicked")]
         private void OnPlayerKicked(BasePlayer player, string reason)
         {
-            IPlayer iplayer = player.IPlayer;
+            IPlayer iplayer = player.IPlayer();
             if (iplayer != null)
             {
-                Interface.CallHook("OnUserKicked", player.IPlayer, reason);
+                Interface.CallHook("OnUserKicked", iplayer, reason);
             }
         }
 
@@ -406,7 +406,7 @@ namespace Oxide.Game.Rust
         [HookMethod("OnPlayerRespawn")]
         private object OnPlayerRespawn(BasePlayer player)
         {
-            IPlayer iplayer = player.IPlayer;
+            IPlayer iplayer = player.IPlayer();
             return iplayer != null ? Interface.CallHook("OnUserRespawn", iplayer) : null;
         }
 
@@ -417,7 +417,7 @@ namespace Oxide.Game.Rust
         [HookMethod("OnPlayerRespawned")]
         private void OnPlayerRespawned(BasePlayer player)
         {
-            IPlayer iplayer = player.IPlayer;
+            IPlayer iplayer = player.IPlayer();
             if (iplayer != null)
             {
                 Interface.CallHook("OnUserRespawned", iplayer);

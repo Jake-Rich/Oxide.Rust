@@ -1,6 +1,7 @@
 ﻿using Oxide.Core;
 using Oxide.Core.Libraries;
 using Oxide.Core.Libraries.Covalence;
+using Oxide.Rust.Libraries.Covalence;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -176,7 +177,7 @@ namespace Oxide.Game.Rust.Libraries
             player._name = name;
             player.SendNetworkUpdateImmediate();
 
-            player.IPlayer.Name = name;
+            player.IPlayer().Name = name;
             permission.UpdateNickname(player.UserIDString, name);
         }
 

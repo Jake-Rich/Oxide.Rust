@@ -2,6 +2,7 @@
 
 using Oxide.Core;
 using Oxide.Core.Libraries.Covalence;
+using Oxide.Rust.Libraries.Covalence;
 using References::ProtoBuf;
 using System;
 using System.Collections.Generic;
@@ -86,7 +87,7 @@ namespace Oxide.Game.Rust.Libraries.Covalence
         /// Gets all sleeping players
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<IPlayer> Sleeping => BasePlayer.sleepingPlayerList.Select(p => p.IPlayer);
+        public IEnumerable<IPlayer> Sleeping => BasePlayer.sleepingPlayerList.Select(p => p.IPlayer());
 
         /// <summary>
         /// Finds a single player given unique ID
