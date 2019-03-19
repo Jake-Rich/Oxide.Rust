@@ -5,6 +5,7 @@ using Oxide.Rust.Libraries.Covalence;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
@@ -101,6 +102,8 @@ namespace Oxide.Game.Rust.Libraries
 
         #region Administration
 
+        private FieldInfo _nameField = typeof(BasePlayer).GetField("_name", BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+
         /// <summary>
         /// Bans the player from the server based on user ID
         /// </summary>
@@ -174,7 +177,7 @@ namespace Oxide.Game.Rust.Libraries
 
             player.net.connection.username = name;
             player.displayName = name;
-            player._name = name;
+            _nameField.SetValue(player, null); //The game will recalculate the correctly formatted _name if BasePlayer.ToString() is called
             player.SendNetworkUpdateImmediate();
 
             player.IPlayer().Name = name;
