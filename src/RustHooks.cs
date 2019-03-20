@@ -21,7 +21,7 @@ namespace Oxide.Game.Rust
     public partial class RustCore
     {
         internal bool isPlayerTakingDamage;
-        internal static string ipPattern = @":{1}[0-9]{1}\d*";
+        internal string ipPattern = @":{1}[0-9]{1}\d*";
 
         #region Server Hooks
 

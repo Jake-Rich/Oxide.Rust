@@ -26,6 +26,13 @@ namespace Oxide.Game.Rust
         /// </summary>
         public RustCore()
         {
+            Covalence = RustCovalenceProvider.Instance;
+            pluginManager = Interface.Oxide.RootPluginManager;
+            Server = Covalence.CreateServer();
+            cmdlib = Interface.Oxide.GetLibrary<Command>();
+            lang = Interface.Oxide.GetLibrary<Lang>();
+            permission = Interface.Oxide.GetLibrary<Permission>();
+            Player = Interface.Oxide.GetLibrary<Player>();
             // Set plugin info attributes
             Title = "Rust";
             Author = RustExtension.AssemblyAuthors;
@@ -33,15 +40,15 @@ namespace Oxide.Game.Rust
         }
 
         // Libraries
-        internal readonly Command cmdlib = Interface.Oxide.GetLibrary<Command>();
-        internal readonly Lang lang = Interface.Oxide.GetLibrary<Lang>();
-        internal readonly Permission permission = Interface.Oxide.GetLibrary<Permission>();
-        internal readonly Player Player = Interface.Oxide.GetLibrary<Player>();
+        internal readonly Command cmdlib;
+        internal readonly Lang lang;
+        internal readonly Permission permission;
+        internal readonly Player Player;
 
         // Instances
-        internal static readonly RustCovalenceProvider Covalence = RustCovalenceProvider.Instance;
-        internal readonly PluginManager pluginManager = Interface.Oxide.RootPluginManager;
-        internal readonly IServer Server = Covalence.CreateServer();
+        internal static RustCovalenceProvider Covalence { get; private set; }
+        internal readonly PluginManager pluginManager;
+        internal readonly IServer Server;
 
         // Commands that a plugin can't override
         internal static IEnumerable<string> RestrictedCommands => new[]
