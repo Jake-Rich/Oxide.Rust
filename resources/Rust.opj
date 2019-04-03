@@ -1,6 +1,6 @@
 {
   "Name": "Rust",
-  "TargetDirectory": "D:\\Servers\\Rust\\RustDedicated_Data\\Managed",
+  "TargetDirectory": "C:\\Users\\Jake\\source\\repos\\Oxide.Rust\\src\\Dependencies\\Patched\\RustDedicated_Data\\Managed",
   "Manifests": [
     {
       "AssemblyName": "Assembly-CSharp.dll",
@@ -1489,7 +1489,7 @@
             "InjectionIndex": 112,
             "ReturnBehavior": 0,
             "ArgumentBehavior": 4,
-            "ArgumentString": "this, l11",
+            "ArgumentString": "this,ret",
             "HookTypeName": "Simple",
             "Name": "OnSurveyGather",
             "HookName": "OnSurveyGather",
@@ -1649,7 +1649,7 @@
             "HookName": "OnItemRepair",
             "AssemblyName": "Assembly-CSharp.dll",
             "TypeName": "RepairBench",
-            "Flagged": true,
+            "Flagged": false,
             "Signature": {
               "Exposure": 2,
               "Name": "RepairItem",
@@ -2431,7 +2431,7 @@
                 "Item"
               ]
             },
-            "MSILHash": "KPzLKIxbmMW8fG4OG4FAmf9LSmqOJPxSWsjJCbiQX1M=",
+            "MSILHash": "rLJKbVp70JjUTUfNrML37oxakzhTvt3O9ImpgYTjhvY=",
             "BaseHookName": null,
             "HookCategory": "Weapon"
           }
@@ -5511,7 +5511,7 @@
             "HookName": "OnCreateWorldProjectile",
             "AssemblyName": "Assembly-CSharp.dll",
             "TypeName": "BasePlayer",
-            "Flagged": false,
+            "Flagged": true,
             "Signature": {
               "Exposure": 1,
               "Name": "CreateWorldProjectile",
@@ -5524,7 +5524,7 @@
                 "Item"
               ]
             },
-            "MSILHash": "KPzLKIxbmMW8fG4OG4FAmf9LSmqOJPxSWsjJCbiQX1M=",
+            "MSILHash": "rLJKbVp70JjUTUfNrML37oxakzhTvt3O9ImpgYTjhvY=",
             "BaseHookName": "CanCreateWorldProjectile",
             "HookCategory": "Weapon"
           }
@@ -6269,7 +6269,7 @@
         {
           "Type": "Simple",
           "Hook": {
-            "InjectionIndex": 3,
+            "InjectionIndex": 18,
             "ReturnBehavior": 0,
             "ArgumentBehavior": 1,
             "ArgumentString": null,
@@ -6285,7 +6285,7 @@
               "ReturnType": "System.Void",
               "Parameters": []
             },
-            "MSILHash": "nINFsRSYIH4lILvSVZBPOkxq3nPCxDIGuKFykNeKioE=",
+            "MSILHash": "k6b4SLIrgo+NPSb+dvkqJgV4MfFEjsxmnFOXq3lIwY8=",
             "BaseHookName": null,
             "HookCategory": "Entity"
           }
@@ -6631,7 +6631,7 @@
         {
           "Type": "Simple",
           "Hook": {
-            "InjectionIndex": 43,
+            "InjectionIndex": 47,
             "ReturnBehavior": 0,
             "ArgumentBehavior": 4,
             "ArgumentString": "this, l0",
@@ -6640,7 +6640,7 @@
             "HookName": "OnLootPlayer",
             "AssemblyName": "Assembly-CSharp.dll",
             "TypeName": "BasePlayer",
-            "Flagged": true,
+            "Flagged": false,
             "Signature": {
               "Exposure": 2,
               "Name": "RPC_LootPlayer",
@@ -6681,7 +6681,7 @@
         {
           "Type": "Simple",
           "Hook": {
-            "InjectionIndex": 51,
+            "InjectionIndex": 53,
             "ReturnBehavior": 0,
             "ArgumentBehavior": 4,
             "ArgumentString": "this, l1",
@@ -6690,7 +6690,7 @@
             "HookName": "OnFlameExplosion",
             "AssemblyName": "Assembly-CSharp.dll",
             "TypeName": "FlameExplosive",
-            "Flagged": true,
+            "Flagged": false,
             "Signature": {
               "Exposure": 2,
               "Name": "Explode",
@@ -6716,7 +6716,7 @@
             "HookName": "OnFireBallDamage",
             "AssemblyName": "Assembly-CSharp.dll",
             "TypeName": "FireBall",
-            "Flagged": true,
+            "Flagged": false,
             "Signature": {
               "Exposure": 2,
               "Name": "DoRadialDamage",
@@ -6740,7 +6740,7 @@
             "HookName": "OnFireBallSpread",
             "AssemblyName": "Assembly-CSharp.dll",
             "TypeName": "FireBall",
-            "Flagged": true,
+            "Flagged": false,
             "Signature": {
               "Exposure": 2,
               "Name": "TryToSpread",
@@ -7291,7 +7291,7 @@
         {
           "Type": "Simple",
           "Hook": {
-            "InjectionIndex": 136,
+            "InjectionIndex": 135,
             "ReturnBehavior": 1,
             "ArgumentBehavior": 4,
             "ArgumentString": "a0, l0",
@@ -7556,7 +7556,7 @@
             "InjectionIndex": 28,
             "ReturnBehavior": 0,
             "ArgumentBehavior": 4,
-            "ArgumentString": "l0, l1",
+            "ArgumentString": "l0",
             "HookTypeName": "Simple",
             "Name": "OnTeamCreated",
             "HookName": "OnTeamCreated",
