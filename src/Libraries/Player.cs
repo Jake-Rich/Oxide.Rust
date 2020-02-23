@@ -175,7 +175,7 @@ namespace Oxide.Game.Rust.Libraries
             player._name = name;
             player.SendNetworkUpdateImmediate();
 
-            player.IPlayer.Name = name;
+            player.IPlayer().Name = name;
             permission.UpdateNickname(player.UserIDString, name);
         }
 

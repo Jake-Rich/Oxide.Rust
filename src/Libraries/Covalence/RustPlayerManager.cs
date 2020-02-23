@@ -86,7 +86,7 @@ namespace Oxide.Game.Rust.Libraries.Covalence
         /// Gets all sleeping players
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<IPlayer> Sleeping => BasePlayer.sleepingPlayerList.Select(p => p.IPlayer);
+        public IEnumerable<IPlayer> Sleeping => BasePlayer.sleepingPlayerList.Select(p => p.IPlayer());
 
         /// <summary>
         /// Finds a single player given unique ID
