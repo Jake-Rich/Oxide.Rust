@@ -14766,7 +14766,7 @@
           "AssemblyName": "Assembly-CSharp.dll",
           "TypeName": "BasePlayer",
           "FieldType": "Oxide.Core|Oxide.Core.Libraries.Covalence.IPlayer",
-          "Flagged": false
+          "Flagged": true
         }
       ]
     },
