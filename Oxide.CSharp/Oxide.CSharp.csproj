@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\ILRepack.2.0.13\build\ILRepack.props" Condition="Exists('..\packages\ILRepack.2.0.13\build\ILRepack.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{A0BECF13-0993-41EC-9DF8-7F703BF10A8E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>8.0</LangVersion>
+    <AssemblyName>Oxide.CSharp</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oxide.Core, Version=2.0.3974.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oxide.Core.2.0.3974\lib\net46\Oxide.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Oxide.References, Version=2.0.3765.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oxide.References.2.0.3765\lib\net46\Oxide.References.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\RustServer\Server\staging\RustDedicated_Data\Managed\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\RustServer\Server\staging\RustDedicated_Data\Managed\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp, Version=1.0.4.0, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocketSharpFork.1.0.4.0\lib\net35\websocket-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ObjectStream.Data\CompilerData.cs" />
+    <Compile Include="ObjectStream.Data\CompilerFile.cs" />
+    <Compile Include="ObjectStream.Data\CompilerLanguageVersion.cs" />
+    <Compile Include="ObjectStream.Data\CompilerMessage.cs" />
+    <Compile Include="ObjectStream.Data\CompilerMessageType.cs" />
+    <Compile Include="ObjectStream.Data\CompilerPlatform.cs" />
+    <Compile Include="ObjectStream.Data\CompilerTarget.cs" />
+    <Compile Include="ObjectStream.IO\BindChanger.cs" />
+    <Compile Include="ObjectStream.IO\ObjectStreamWrapper.cs" />
+    <Compile Include="ObjectStream.Threading\Worker.cs" />
+    <Compile Include="ObjectStream.Threading\WorkerExceptionEventHandler.cs" />
+    <Compile Include="ObjectStream.Threading\WorkerSucceededEventHandler.cs" />
+    <Compile Include="ObjectStream\ConnectionExceptionEventHandler.cs" />
+    <Compile Include="ObjectStream\ConnectionFactory.cs" />
+    <Compile Include="ObjectStream\ConnectionMessageEventHandler.cs" />
+    <Compile Include="ObjectStream\ObjectStreamClient.cs" />
+    <Compile Include="ObjectStream\ObjectStreamClientFactory.cs" />
+    <Compile Include="ObjectStream\ObjectStreamConnection.cs" />
+    <Compile Include="ObjectStream\StreamExceptionEventHandler.cs" />
+    <Compile Include="Oxide.Core.CSharp\DirectCallMethod.cs" />
+    <Compile Include="Oxide.Plugins\ChatCommandAttribute.cs" />
+    <Compile Include="Oxide.Plugins\CommandAttribute.cs" />
+    <Compile Include="Oxide.Plugins\CompilableFile.cs" />
+    <Compile Include="Oxide.Plugins\CompilablePlugin.cs" />
+    <Compile Include="Oxide.Plugins\Compilation.cs" />
+    <Compile Include="Oxide.Plugins\CompiledAssembly.cs" />
+    <Compile Include="Oxide.Plugins\ConsoleCommandAttribute.cs" />
+    <Compile Include="Oxide.Plugins\CovalencePlugin.cs" />
+    <Compile Include="Oxide.Plugins\CSharpExtension.cs" />
+    <Compile Include="Oxide.Plugins\CSharpPlugin.cs" />
+    <Compile Include="Oxide.Plugins\CSharpPluginLoader.cs" />
+    <Compile Include="Oxide.Plugins\DescriptionAttribute.cs" />
+    <Compile Include="Oxide.Plugins\ExtensionMethods.cs" />
+    <Compile Include="Oxide.Plugins\Hash.cs" />
+    <Compile Include="Oxide.Plugins\InfoAttribute.cs" />
+    <Compile Include="Oxide.Plugins\OnlinePlayersAttribute.cs" />
+    <Compile Include="Oxide.Plugins\PermissionAttribute.cs" />
+    <Compile Include="Oxide.Plugins\PluginCompiler.cs" />
+    <Compile Include="Oxide.Plugins\PluginLoadFailure.cs" />
+    <Compile Include="Oxide.Plugins\PluginReferenceAttribute.cs" />
+    <Compile Include="Oxide.Plugins\PluginTimers.cs" />
+    <Compile Include="Oxide.Plugins\Timer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\ILRepack.2.0.13\build\ILRepack.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILRepack.2.0.13\build\ILRepack.props'))" />
+  </Target>
+</Project>
